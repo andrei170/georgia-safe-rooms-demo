@@ -62,7 +62,7 @@ h2.t{font-size:clamp(28px,4vw,44px);margin:8px 0 10px}p.st{color:var(--mut);max-
 @media(max-width:900px){.split{grid-template-columns:1fr}}
 .vault{border-radius:16px;min-height:340px;border:1px solid var(--line);background:
  radial-gradient(circle at 50% 50%,#3a332c 0 22%,#2a251f 23% 30%,#1e1a16 31% 100%);position:relative}
-.vault:after{content:"";position:absolute;inset:38%;border:6px solid var(--gold);border-radius:50%;box-shadow:0 0 0 14px rgba(212,162,76,.12)}
+.vault:after{content:"";position:absolute;left:50%;top:50%;width:130px;height:130px;margin:-65px 0 0 -65px;border:6px solid var(--gold);border-radius:50%;box-shadow:0 0 0 14px rgba(212,162,76,.12)}
 ul.ticks{list-style:none}ul.ticks li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--line)}
 ul.ticks li:before{content:"\2714";position:absolute;left:0;color:var(--acc)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
