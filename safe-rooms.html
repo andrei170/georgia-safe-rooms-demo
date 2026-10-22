@@ -7,16 +7,18 @@
 <div class="topbar">&#11088; Grand opening Saturday 7 November in Thomaston &middot; <a href="index.html#list">Black Friday early access is open</a> <span style="opacity:.75">(this banner changes with each promotion)</span></div>
 <header class="site"><div class="wrap"><a class="logo" href="index.html">Georgia <b>Safe Rooms</b><small>&#9888; your logo goes here</small></a>
 <nav class="main"><a href="index.html">Home</a><a href="store.html">Online Store</a><a href="safe-rooms.html" class="on">Safe Rooms</a><a href="storm-shelters.html">Storm Shelters</a><a href="bunkers.html">Bunkers</a><a href="visit.html">Visit the Store</a><a href="faq.html">FAQ</a></nav><a class="btn" href="store.html">Online Store</a></div></header>
-<section class="pagehead"><div class="wrap"><div class="eyebrow">Safe Rooms</div><h1>Safe Rooms, Inside Your Home</h1><p>A safe room built into your house to FEMA P-320, under a mutual NDA.</p></div></section>
-<section class="s"><div class="wrap split"><div><ul class="ticks"><li>Built to FEMA P-320</li><li>Inside your home, often in a closet, basement or garage</li><li>NBC air filtration available</li><li>EMP shielding available</li><li>Mutual NDA on every project</li></ul><p style="margin-top:18px"><span class="ph">&#9888; Your safe room project photos go here</span></p></div>
-<div class="vault" aria-hidden="true"></div></div></section>
+<section class="pagehead"><div class="wrap"><div class="eyebrow">Safe Rooms</div><h1>Safe Rooms, Inside Your Home</h1><p>A safe room built into your house to FEMA P-320, under a mutual NDA.</p>
+<p style="margin-top:14px"><a class="btn" href="#consult">Book a private consultation</a></p></div></section>
+<section class="s"><div class="wrap split"><div><ul class="ticks"><li>Built to FEMA P-320</li><li>Inside your home, often in a closet, basement or garage</li><li>NBC air filtration available</li><li>EMP shielding available</li><li>Mutual NDA on every project</li></ul><p style="margin-top:18px">NBC air filtration and EMP shielding come as part of the safe room package. They are not sold separately in the store. The <a href="store.html#gun-mounts" style="color:var(--acc2);text-decoration:underline">gun mounts</a> we fit inside are in the Online Store.</p></div>
+<div class="vis vis-safe-rooms"><span class="ic" aria-hidden="true">&#128737;</span><span class="ph">&#9888; Your safe room project photo goes here</span></div></div></section>
 <section class="s alt"><div class="wrap"><div class="eyebrow">How it works</div><h2 class="t">From first call to finished safe room</h2>
 <div class="steps"><div class="step"><h3>Private consultation</h3><p>Under a mutual NDA from the first conversation.</p></div>
 <div class="step"><h3>Site visit and design</h3><p>We come out, look at the space and plan it with you.</p></div>
 <div class="step"><h3>Build</h3><p>To the FEMA P-320 standard.</p></div><div class="step"><h3>Handover</h3><p>Tested, explained, and yours.</p></div></div></div></section>
 <section class="s" id="consult"><div class="wrap split"><div><h2 class="t">Book a private consultation</h2>
-<p class="st">Name, email and phone. That is all we need to start, and nothing you share leaves Georgia Safe Rooms.</p></div>
-<div class="panel"><h3>Private consultation</h3><form class="f"><label>Name</label><input placeholder="First and last name"><label>Email</label><input type="email" placeholder="you@example.com"><label>Phone</label><input placeholder="(706) 000-0000"><input type="hidden" value="Safe Rooms"><button class="btn" type="submit">Book a private consultation</button><div class="ok-msg">&#10004; Demo only: on the live site this goes straight into your CRM, tagged &ldquo;Safe Rooms&rdquo;.</div><div class="fine">Every consultation is private, under a mutual NDA.</div></form></div></div></section>
+<p class="st">First name, email and phone. That is all we need to start, and nothing you share leaves Georgia Safe Rooms.</p>
+<p class="fine">This is a custom build, so it is not sold in the Online Store. We come out, see the space and quote it.</p></div>
+<div class="panel"><h3>Private consultation</h3><form class="f"><label>First name</label><input placeholder="First name"><label>Email</label><input type="email" placeholder="you@example.com"><label>Phone</label><input placeholder="(706) 000-0000"><input type="hidden" value="Safe Rooms"><button class="btn" type="submit">Book a private consultation</button><div class="ok-msg">&#10004; Demo only: on the live site this goes straight into your CRM, tagged &ldquo;Safe Rooms&rdquo;.</div><div class="fine">Every consultation is private, under a mutual NDA.</div></form></div></div></section>
 <footer class="site"><div class="wrap cols">
 <div><div class="logo">Georgia <b>Safe Rooms</b></div><p style="margin-top:10px">Firearms, safes and vault doors, and safe rooms, storm shelters and bunkers. Thomaston, Georgia.</p></div>
 <div><h4>Online Store</h4><ul><li><a href="store.html#firearms">Firearms</a></li><li><a href="store.html#ammo">Ammo</a></li><li><a href="store.html#safes">Safes</a></li><li><a href="store.html#vault-doors">Vault doors</a></li></ul></div>
@@ -34,4 +36,35 @@
  tick();setInterval(tick,1000);
  document.querySelectorAll('form.f').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();
   var m=f.querySelector('.ok-msg');if(m){m.style.display='block';}});});
+
+ var toast=document.createElement('div');toast.className='toast';document.body.appendChild(toast);
+ function getN(){try{return parseInt(sessionStorage.getItem('gsr_cart')||'0',10)||0}catch(e){return 0}}
+ function setN(n){try{sessionStorage.setItem('gsr_cart',String(n))}catch(e){}document.querySelectorAll('[data-cartn]').forEach(function(b){b.textContent=n})}
+ setN(getN());
+ document.querySelectorAll('[data-add]').forEach(function(b){b.addEventListener('click',function(){
+  var q=document.getElementById('qty');var add=q?parseInt(q.value,10):1;setN(getN()+add);
+  toast.textContent='Added to cart. Demo only: your real products and prices go here.';toast.style.display='block';
+  clearTimeout(toast._t);toast._t=setTimeout(function(){toast.style.display='none'},2600);});});
+ var secs=document.querySelectorAll('.catsec');
+ if(secs.length){
+  var show=document.querySelector('.showing'),lab=show.querySelector('b'),nores=document.querySelector('.noresult'),q=document.getElementById('q');
+  function apply(){
+   var h=decodeURIComponent(location.hash.slice(1)).split('~'),cat=h[0],sub=h[1]||'',hit=false;
+   secs.forEach(function(s){if(s.id===cat)hit=true});
+   document.querySelectorAll('.side a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+h.join('~'))});
+   if(!hit){secs.forEach(function(s){s.style.display='';s.querySelectorAll('.pc').forEach(function(c){c.style.display=''})});show.classList.remove('on');return}
+   if(q)q.value='';nores.style.display='none';
+   secs.forEach(function(s){var on=s.id===cat;s.style.display=on?'':'none';
+    s.querySelectorAll('.pc').forEach(function(c){c.style.display=(!sub||c.getAttribute('data-sub')===sub)?'':'none'})});
+   var sec=document.getElementById(cat),t=sec.getAttribute('data-name');
+   if(sub){var a=document.querySelector('.side a[href="#'+cat+'~'+sub+'"]');if(a)t+=' › '+a.textContent}
+   lab.textContent=t;show.classList.add('on');
+   var top=document.querySelector('.layout');if(top)window.scrollTo(0,top.getBoundingClientRect().top+window.pageYOffset-90);}
+  window.addEventListener('hashchange',apply);apply();
+  show.querySelector('button').addEventListener('click',function(){history.replaceState(null,'',location.pathname);apply()});
+  if(q)q.addEventListener('input',function(){var v=q.value.trim().toLowerCase(),n=0;
+   if(location.hash){history.replaceState(null,'',location.pathname);show.classList.remove('on');document.querySelectorAll('.side a').forEach(function(a){a.classList.remove('on')})}
+   secs.forEach(function(s){var any=0;s.querySelectorAll('.pc').forEach(function(c){var m=!v||c.getAttribute('data-k').indexOf(v)>-1;c.style.display=m?'':'none';if(m){any++;n++}});s.style.display=any?'':'none'});
+   nores.style.display=n?'none':'block';});
+ }
 })();</script></body></html>
