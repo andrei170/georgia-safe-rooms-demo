@@ -34,6 +34,7 @@
   var q=document.getElementById('qty');var add=q?parseInt(q.value,10):1;setN(getN()+add);
   toast.textContent='Added to cart. Demo only: your real products and prices go here.';toast.style.display='block';
   clearTimeout(toast._t);toast._t=setTimeout(function(){toast.style.display='none'},2600);});});
+ if(window.innerWidth<900)document.querySelectorAll('.side details').forEach(function(d){d.removeAttribute('open')});
  var secs=document.querySelectorAll('.catsec');
  if(secs.length){
   var show=document.querySelector('.showing'),lab=show.querySelector('b'),nores=document.querySelector('.noresult'),q=document.getElementById('q');
