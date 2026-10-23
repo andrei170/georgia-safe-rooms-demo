@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Georgia Safe Rooms//Grand Opening//EN
+BEGIN:VEVENT
+UID:grand-opening-20261107@georgiasaferooms
+DTSTAMP:20261023T120000Z
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261108
+SUMMARY:Georgia Safe Rooms Grand Opening
+LOCATION:551 Hannah's Mill Rd\, Thomaston\, GA 30286
+DESCRIPTION:Opening day offers\, a draw for everyone who signs up\, food and giveaways.
+END:VEVENT
+END:VCALENDAR
